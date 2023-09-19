@@ -16,13 +16,6 @@ spec:
   releaseName: podinfo
   values:
     affinity: {}
-    args: []
-    autoscaling:
-      enabled: false
-      maxReplicas: ""
-      minReplicas: ""
-      targetCPU: ""
-      targetMemory: ""
     backend: null
     backends: []
     cache: ""
@@ -33,57 +26,6 @@ spec:
       issuerRef:
         kind: ClusterIssuer
         name: self-signed
-    cloneStaticSiteFromGit:
-      branch: ""
-      enabled: false
-      extraEnvVars: []
-      extraVolumeMounts: []
-      gitClone:
-        args: []
-        command: []
-      gitSync:
-        args: []
-        command: []
-        resources:
-          limits: {}
-          requests: {}
-      image:
-        digest: ""
-        pullPolicy: IfNotPresent
-        pullSecrets: []
-        registry: docker.io
-        repository: bitnami/git
-        tag: 2.41.0-debian-11-r76
-      interval: 60
-      repository: ""
-    clusterDomain: cluster.local
-    command: []
-    commonAnnotations: {}
-    commonLabels: {}
-    containerPorts:
-      http: 8080
-      https: ""
-    containerSecurityContext:
-      enabled: false
-      runAsNonRoot: true
-      runAsUser: 1001
-    customLivenessProbe: {}
-    customReadinessProbe: {}
-    customStartupProbe: {}
-    diagnosticMode:
-      args:
-      - infinity
-      command:
-      - sleep
-      enabled: false
-    existingServerBlockConfigmap: ""
-    extraContainerPorts: []
-    extraDeploy: []
-    extraEnvVars: []
-    extraEnvVarsCM: ""
-    extraEnvVarsSecret: ""
-    extraVolumeMounts: []
-    extraVolumes: []
     faults:
       delay: false
       error: false
@@ -91,30 +33,9 @@ spec:
       testTimeout: false
       unhealthy: false
       unready: false
-    fullnameOverride: ""
-    global:
-      imagePullSecrets: []
-      imageRegistry: ""
     h2c:
       enabled: false
-    healthIngress:
-      annotations: {}
-      enabled: false
-      extraHosts: []
-      extraPaths: []
-      extraRules: []
-      extraTls: []
-      hostname: example.local
-      ingressClassName: ""
-      path: /
-      pathType: ImplementationSpecific
-      secrets: []
-      selfSigned: false
-      tls: false
     host: null
-    hostAliases: []
-    hostIPC: false
-    hostNetwork: false
     hpa:
       cpu: null
       enabled: false
@@ -135,78 +56,12 @@ spec:
         - path: /
           pathType: ImplementationSpecific
       tls: []
-    initContainers: []
-    kubeVersion: ""
-    lifecycleHooks: {}
     linkerd:
       profile:
         enabled: false
-    livenessProbe:
-      enabled: true
-      failureThreshold: 6
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      successThreshold: 1
-      timeoutSeconds: 5
     logLevel: info
-    metrics:
-      enabled: false
-      image:
-        digest: ""
-        pullPolicy: IfNotPresent
-        pullSecrets: []
-        registry: docker.io
-        repository: bitnami/nginx-exporter
-        tag: 0.11.0-debian-11-r324
-      podAnnotations: {}
-      port: ""
-      prometheusRule:
-        additionalLabels: {}
-        enabled: false
-        namespace: ""
-        rules: []
-      resources:
-        limits: {}
-        requests: {}
-      securityContext:
-        enabled: false
-        runAsUser: 1001
-      service:
-        annotations:
-          prometheus.io/port: '{{ .Values.metrics.service.port }}'
-          prometheus.io/scrape: "true"
-        port: 9113
-      serviceMonitor:
-        enabled: false
-        honorLabels: false
-        interval: ""
-        jobLabel: ""
-        labels: {}
-        metricRelabelings: []
-        namespace: ""
-        relabelings: []
-        scrapeTimeout: ""
-        selector: {}
-    nameOverride: ""
-    namespaceOverride: ""
-    nodeAffinityPreset:
-      key: ""
-      type: ""
-      values: []
     nodeSelector: {}
-    pdb:
-      create: false
-      maxUnavailable: 0
-      minAvailable: 1
-    podAffinityPreset: ""
     podAnnotations: {}
-    podAntiAffinityPreset: soft
-    podLabels: {}
-    podSecurityContext:
-      enabled: false
-      fsGroup: 1001
-      sysctls: []
-    priorityClassName: ""
     probes:
       liveness:
         failureThreshold: 3
@@ -227,13 +82,6 @@ spec:
         periodSeconds: 10
         successThreshold: 1
         timeoutSeconds: 5
-    readinessProbe:
-      enabled: true
-      failureThreshold: 3
-      initialDelaySeconds: 5
-      periodSeconds: 5
-      successThreshold: 1
-      timeoutSeconds: 3
     redis:
       enabled: false
       repository: redis
@@ -244,10 +92,7 @@ spec:
       requests:
         cpu: 1m
         memory: 16Mi
-    revisionHistoryLimit: 10
-    schedulerName: ""
     securityContext: {}
-    serverBlock: ""
     service:
       annotations: {}
       enabled: true
@@ -267,18 +112,6 @@ spec:
       additionalLabels: {}
       enabled: false
       interval: 15s
-    sidecarSingleProcessNamespace: false
-    sidecars: []
-    startupProbe:
-      enabled: false
-      failureThreshold: 6
-      initialDelaySeconds: 30
-      periodSeconds: 10
-      successThreshold: 1
-      timeoutSeconds: 5
-    staticSiteConfigmap: ""
-    staticSitePVC: ""
-    terminationGracePeriodSeconds: ""
     tls:
       certPath: /data/cert
       enabled: false
@@ -286,11 +119,7 @@ spec:
       port: 9899
       secretName: null
     tolerations: []
-    topologySpreadConstraints: []
     ui:
       color: '#34577c'
       logo: ""
       message: ""
-    updateStrategy:
-      rollingUpdate: {}
-      type: RollingUpdate
