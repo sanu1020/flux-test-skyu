@@ -6,13 +6,13 @@ metadata:
 spec:
   chart:
     chart: nginx
-    reconcilestrategy: ChartVersion
+    reconcileStrategy: ChartVersion
     version: 15.2.1
-    sourceref:
+    sourceRef:
       kind: HelmRepository
       name: bitnami
   interval: 5m0s
-  releasename: nginx
+  releaseName: nginx
   values:
     affinity: {}
     args: []
