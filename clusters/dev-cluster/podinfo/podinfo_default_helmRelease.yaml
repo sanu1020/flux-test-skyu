@@ -1,4 +1,4 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiversion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: podinfo
@@ -7,13 +7,13 @@ spec:
   chart:
     spec:
       chart: podinfo
-      reconcileStrategy: ChartVersion
+      reconcilestrategy: ChartVersion
       version: 6.4.1
-      sourceRef:
+      sourceref:
         kind: HelmRepository
         name: podinfo
   interval: 5m0s
-  releaseName: podinfo
+  releasename: podinfo
   values:
     affinity: {}
     backend: null
