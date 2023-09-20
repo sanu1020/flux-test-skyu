@@ -86,7 +86,7 @@ spec:
       enabled: false
       repository: redis
       tag: 7.0.7
-    replicaCount: 3
+    replicaCount: 1
     resources:
       limits: null
       requests:
