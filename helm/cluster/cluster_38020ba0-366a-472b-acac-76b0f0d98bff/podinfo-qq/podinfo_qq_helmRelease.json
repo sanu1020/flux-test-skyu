@@ -1,0 +1,1 @@
+`{"apiVersion":"helm.toolkit.fluxcd.io/v2beta1","kind":"HelmRelease","metadata":{"name":"podinfo","namespace":"qq"},"spec":{"chart":{"spec":{"chart":"podinfo","reconcileStrategy":"ChartVersion","version":"6.5.2","sourceRef":{"kind":"HelmRepository","name":"podinfo"}}},"interval":"5m0s","releaseName":"podinfo","values":{},"valuesFrom":null}}`
