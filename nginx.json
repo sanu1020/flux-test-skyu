@@ -1,0 +1,25 @@
+{
+  "Name": "nginx",
+  "Version": "7.0.3", 
+  "Packagename": "nginx",
+  "SourceRefName": "bitnami",
+  "HelmRepositoryURL":"https://grafana.github.io/helm-charts",
+  "valuesFrom":[
+        {
+            "overwritepath":"replicas",
+            "values":"2"
+        },
+        {
+            "overwritepath":"service.type",
+            "values":"LoadBalancer"
+        },
+        {
+            "overwritepath":"service.port",
+            "values":"81"
+        },
+        {
+            "overwritepath":"readinessProbe.httpGet.port",
+            "values":"3001"
+        }
+    ]
+}
