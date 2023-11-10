@@ -1,0 +1,4 @@
+name: "nginx"
+packagename: "nginx"
+sourcerefname: "bitnami"
+hemlrepositoryurl: ""
