@@ -1,8 +1,8 @@
 name: "nginx"
-packagename: "nginx"
-sourcerefname: "bitnami"
-hemlrepositoryurl: "https://grafana.github.io/helm-charts"
 version: "7.0.3"
+repository:
+  sourcerefname: "bitnami"
+  url: "https://grafana.github.io/helm-charts"
 valuesfrom:
   - overwritepath: "replicaCount"
     value: "2"
