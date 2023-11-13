@@ -1,1 +1,1 @@
-`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"nginx-configmap","namespace":"default"},"data":{"replicaCount":"1","service.type":"NodePort"}}}`
+`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"nginx-configmap","namespace":"default"},"data":{"replicaCount":"2","service.ports.http":"81","service.type":"ClusterIP"}}}`
