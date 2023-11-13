@@ -1,0 +1,1 @@
+`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"podinfo-configmap","namespace":"podinfo"},"data":{"replicaCount":"2","service.nodePort":"31199","service.type":"NodePort"}}}`
