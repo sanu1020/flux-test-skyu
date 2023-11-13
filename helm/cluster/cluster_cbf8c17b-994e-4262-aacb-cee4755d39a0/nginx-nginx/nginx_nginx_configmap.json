@@ -1,0 +1,1 @@
+`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"nginx-configmap","namespace":"nginx"},"data":{}}}`
