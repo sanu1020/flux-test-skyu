@@ -1,1 +1,1 @@
-`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"podinfo-configmap","namespace":"default"},"data":{}}}`
+`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"podinfo-configmap","namespace":"default"},"data":{"replicaCount":"2"}}}`
