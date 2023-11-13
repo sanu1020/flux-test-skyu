@@ -1,0 +1,1 @@
+`{"data":{"apiVersion":"v1","kind":"ConfigMap","metadata":{"name":"podinfo-configmap","namespace":"default"},"data":{"replicaCount":"2","service.ports.http":"81","service.type":"ClusterIP"}}}`
