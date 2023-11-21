@@ -17,14 +17,10 @@ spec:
   values: {}
   valuesFrom:
   - kind: ConfigMap
-    name: podinfo-configmap
+    name: podinfo-default-configmap
     valuesKey: replicaCount
     targetPath: replicaCount
   - kind: ConfigMap
-    name: podinfo-configmap
+    name: podinfo-default-configmap
     valuesKey: service.type
     targetPath: service.type
-  - kind: ConfigMap
-    name: podinfo-configmap
-    valuesKey: service.nodePort
-    targetPath: service.nodePort
