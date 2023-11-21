@@ -1,0 +1,30 @@
+apiversion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: podinfo
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: podinfo
+      reconcilestrategy: ChartVersion
+      version: 6.5.3
+      sourceref:
+        kind: HelmRepository
+        name: podinfo
+  interval: 5m0s
+  releasename: podinfo
+  values: {}
+  valuesfrom:
+  - kind: ConfigMap
+    name: podinfo-default-configmap
+    valueskey: replicaCount
+    targetpath: replicaCount
+  - kind: ConfigMap
+    name: podinfo-default-configmap
+    valueskey: service.type
+    targetpath: service.type
+  - kind: ConfigMap
+    name: podinfo-default-configmap
+    valueskey: service.nodePort
+    targetpath: service.nodePort
