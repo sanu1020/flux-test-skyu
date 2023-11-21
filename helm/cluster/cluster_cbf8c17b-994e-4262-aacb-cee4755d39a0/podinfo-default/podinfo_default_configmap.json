@@ -1,9 +1,0 @@
-apiversion: v1
-kind: ConfigMap
-metadata:
-  name: podinfo-default-configmap
-  namespace: default
-data:
-  replicaCount: "2"
-  service.nodePort: "31199"
-  service.type: NodePort
