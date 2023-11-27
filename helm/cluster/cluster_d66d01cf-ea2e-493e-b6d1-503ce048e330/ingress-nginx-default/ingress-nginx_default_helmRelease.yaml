@@ -18,5 +18,17 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: ingress-nginx-configmap
+    valuesKey: controller.metrics.enabled
+    targetPath: controller.metrics.enabled
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
     valuesKey: controller.replicaCount
     targetPath: controller.replicaCount
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.minAvailable
+    targetPath: controller.minAvailable
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.service.internal.enabled
+    targetPath: controller.service.internal.enabled
