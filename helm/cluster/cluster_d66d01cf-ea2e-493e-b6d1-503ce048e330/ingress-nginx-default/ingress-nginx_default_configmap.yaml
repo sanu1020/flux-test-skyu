@@ -4,5 +4,4 @@ metadata:
   name: ingress-nginx-configmap
   namespace: default
 data:
-  controller.autoscaling.enabled: "true"
   controller.replicaCount: "2"
