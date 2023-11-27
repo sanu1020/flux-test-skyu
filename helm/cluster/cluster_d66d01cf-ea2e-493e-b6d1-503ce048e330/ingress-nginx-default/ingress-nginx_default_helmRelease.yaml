@@ -58,10 +58,6 @@ spec:
     targetPath: controller.service.annotations.service\.beta\.kubernetes\.io/aws-load-balancer-cross-zone-load-balancing-enabled
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.ingressClassResource.name
-    targetPath: controller.ingressClassResource.name
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
     valuesKey: controller.resources.requests.cpu
     targetPath: controller.resources.requests.cpu
   - kind: ConfigMap

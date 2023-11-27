@@ -9,7 +9,6 @@ data:
   controller.autoscaling.minReplicas: 2
   controller.autoscaling.targetCPUUtilizationPercentage: 75
   controller.config.client-body-buffer-size: 8m
-  controller.ingressClassResource.name: nginx-private
   controller.metrics.enabled: "2"
   controller.metrics.service.annotations.prometheus.io/port: "10254"
   controller.metrics.service.annotations.prometheus.io/scrape: true
