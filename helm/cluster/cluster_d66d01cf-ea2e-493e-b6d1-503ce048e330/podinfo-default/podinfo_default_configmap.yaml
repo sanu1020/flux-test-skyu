@@ -4,5 +4,5 @@ metadata:
   name: podinfo-configmap
   namespace: default
 data:
-  replicaCount: "2"
-  service.type: LoadBalancer
+  replicaCount: "1"
+  service.type: NodePort
