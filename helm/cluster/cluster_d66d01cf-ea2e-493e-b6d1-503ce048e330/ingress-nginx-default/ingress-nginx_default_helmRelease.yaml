@@ -21,6 +21,12 @@ spec:
           annotations:
             prometheus.io/port: "10254"
             prometheus.io/scrape: "true"
+      service:
+        annotations:
+          service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+          service.beta.kubernetes.io/aws-load-balancer-internal: "false"
+          service.beta.kubernetes.io/aws-load-balancer-name: nlb-helm-test-cluster
+          service.beta.kubernetes.io/aws-load-balancer-type: nlb
   valuesFrom:
   - kind: ConfigMap
     name: ingress-nginx-configmap
