@@ -38,10 +38,6 @@ spec:
     targetPath: controller.minAvailable
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.service.internal.enabled
-    targetPath: controller.service.internal.enabled
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
     valuesKey: controller.ingressClassResource.name
     targetPath: controller.ingressClassResource.name
   - kind: ConfigMap
