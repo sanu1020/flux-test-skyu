@@ -18,53 +18,9 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.metrics.enabled
-    targetPath: controller.metrics.enabled
+    valuesKey: controller.metrics.service.annotations.prometheus.io_port
+    targetPath: controller.metrics.service.annotations.prometheus.io_port
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.replicaCount
-    targetPath: controller.replicaCount
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.minAvailable
-    targetPath: controller.minAvailable
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.ingressClassResource.name
-    targetPath: controller.ingressClassResource.name
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.resources.requests.cpu
-    targetPath: controller.resources.requests.cpu
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.resources.requests.memory
-    targetPath: controller.resources.requests.memory
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.resources.limits.memory
-    targetPath: controller.resources.limits.memory
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.resources.limits.cpu
-    targetPath: controller.resources.limits.cpu
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.config.client-body-buffer-size
-    targetPath: controller.config.client-body-buffer-size
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.autoscaling.enabled
-    targetPath: controller.autoscaling.enabled
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.autoscaling.minReplicas
-    targetPath: controller.autoscaling.minReplicas
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.autoscaling.maxReplicas
-    targetPath: controller.autoscaling.maxReplicas
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
-    valuesKey: controller.autoscaling.targetCPUUtilizationPercentage
-    targetPath: controller.autoscaling.targetCPUUtilizationPercentage
+    valuesKey: controller.metrics.service.annotations.prometheus.io_scrape
+    targetPath: controller.metrics.service.annotations.prometheus.io_scrape
