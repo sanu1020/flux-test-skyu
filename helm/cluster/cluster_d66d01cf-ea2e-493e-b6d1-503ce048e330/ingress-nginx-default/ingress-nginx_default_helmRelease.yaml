@@ -1,0 +1,70 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ingress-nginx
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: ingress-nginx
+      reconcileStrategy: ChartVersion
+      version: 4.8.3
+      sourceRef:
+        kind: HelmRepository
+        name: ingress-nginx
+  interval: 5m0s
+  releaseName: ingress-nginx
+  values: {}
+  valuesFrom:
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.metrics.enabled
+    targetPath: controller.metrics.enabled
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.replicaCount
+    targetPath: controller.replicaCount
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.minAvailable
+    targetPath: controller.minAvailable
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.ingressClassResource.name
+    targetPath: controller.ingressClassResource.name
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.resources.requests.cpu
+    targetPath: controller.resources.requests.cpu
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.resources.requests.memory
+    targetPath: controller.resources.requests.memory
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.resources.limits.memory
+    targetPath: controller.resources.limits.memory
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.resources.limits.cpu
+    targetPath: controller.resources.limits.cpu
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.config.client-body-buffer-size
+    targetPath: controller.config.client-body-buffer-size
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.autoscaling.enabled
+    targetPath: controller.autoscaling.enabled
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.autoscaling.minReplicas
+    targetPath: controller.autoscaling.minReplicas
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.autoscaling.maxReplicas
+    targetPath: controller.autoscaling.maxReplicas
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.autoscaling.targetCPUUtilizationPercentage
+    targetPath: controller.autoscaling.targetCPUUtilizationPercentage
