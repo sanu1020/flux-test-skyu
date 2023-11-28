@@ -10,11 +10,11 @@ data:
   controller.autoscaling.targetCPUUtilizationPercentage: "75"
   controller.config.client-body-buffer-size: 8m
   controller.ingressClassResource.name: nginx-private
-  controller.metrics.enabled: "2"
   controller.minAvailable: "1"
   controller.replicaCount: "2"
   controller.resources.limits.cpu: 1000m
   controller.resources.limits.memory: 2Gi
   controller.resources.requests.cpu: 100m
   controller.resources.requests.memory: 250Mi
+  controller.service.annotations.service.beta.kubernetes.io.aws-load-balancer-internal: "false"
   controller.service.internal.enabled: "true"

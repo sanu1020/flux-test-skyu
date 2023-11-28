@@ -18,10 +18,6 @@ spec:
   valuesFrom:
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.metrics.enabled
-    targetPath: controller.metrics.enabled
-  - kind: ConfigMap
-    name: ingress-nginx-configmap
     valuesKey: controller.replicaCount
     targetPath: controller.replicaCount
   - kind: ConfigMap
@@ -32,6 +28,10 @@ spec:
     name: ingress-nginx-configmap
     valuesKey: controller.service.internal.enabled
     targetPath: controller.service.internal.enabled
+  - kind: ConfigMap
+    name: ingress-nginx-configmap
+    valuesKey: controller.service.annotations.service.beta.kubernetes.io.aws-load-balancer-internal
+    targetPath: controller.service.annotations.service.beta.kubernetes.io.aws-load-balancer-internal
   - kind: ConfigMap
     name: ingress-nginx-configmap
     valuesKey: controller.ingressClassResource.name
