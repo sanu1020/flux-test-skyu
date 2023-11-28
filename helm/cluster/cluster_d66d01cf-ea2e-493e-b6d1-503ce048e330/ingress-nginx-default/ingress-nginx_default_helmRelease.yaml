@@ -34,12 +34,12 @@ spec:
     targetPath: controller.metrics.enabled
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.metrics.service.annotations.prometheus.io_port
-    targetPath: controller.metrics.service.annotations.prometheus.io_port
+    valuesKey: controller.metrics.service.annotations.prometheus.io.port
+    targetPath: controller.metrics.service.annotations.prometheus.io.port
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.metrics.service.annotations.prometheus.io_scrape
-    targetPath: controller.metrics.service.annotations.prometheus.io_scrape
+    valuesKey: controller.metrics.service.annotations.prometheus.io.scrape
+    targetPath: controller.metrics.service.annotations.prometheus.io.scrape
   - kind: ConfigMap
     name: ingress-nginx-configmap
     valuesKey: controller.replicaCount
