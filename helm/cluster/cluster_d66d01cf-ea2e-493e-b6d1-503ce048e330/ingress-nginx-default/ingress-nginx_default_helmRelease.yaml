@@ -30,8 +30,8 @@ spec:
     targetPath: controller.service.internal.enabled
   - kind: ConfigMap
     name: ingress-nginx-configmap
-    valuesKey: controller.service.annotations.service.beta.kubernetes.io\aws-load-balancer-name
-    targetPath: controller.service.annotations.service.beta.kubernetes.io\aws-load-balancer-name
+    valuesKey: controller.service.annotations.service.beta.kubernetes.io//aws-load-balancer-name
+    targetPath: controller.service.annotations.service.beta.kubernetes.io//aws-load-balancer-name
   - kind: ConfigMap
     name: ingress-nginx-configmap
     valuesKey: controller.ingressClassResource.name
