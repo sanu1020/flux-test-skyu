@@ -19,7 +19,7 @@ spec:
       metrics:
         service:
           annotations:
-            prometheus.io/port: 10254
+            prometheus.io/port: "10254"
             prometheus.io/scrape: true
   valuesFrom:
   - kind: ConfigMap
