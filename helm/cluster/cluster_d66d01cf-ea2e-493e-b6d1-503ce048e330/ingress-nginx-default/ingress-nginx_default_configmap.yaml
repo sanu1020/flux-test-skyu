@@ -16,8 +16,5 @@ data:
   controller.resources.limits.memory: 2Gi
   controller.resources.requests.cpu: 100m
   controller.resources.requests.memory: 250Mi
-  controller.service.annotations.service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
-  controller.service.annotations.service.beta.kubernetes.io/aws-load-balancer-internal: "false"
-  controller.service.annotations.service.beta.kubernetes.io/aws-load-balancer-name: nlb-helm-test-cluster
-  controller.service.annotations.service.beta.kubernetes.io/aws-load-balancer-type: nlb
+  controller.service.annotations.service.beta.kubernetes.io\aws-load-balancer-name: nlb-helm-test-cluster
   controller.service.internal.enabled: "true"
