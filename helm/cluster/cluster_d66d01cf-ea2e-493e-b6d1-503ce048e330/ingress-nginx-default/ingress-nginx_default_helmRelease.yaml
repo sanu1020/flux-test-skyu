@@ -20,7 +20,7 @@ spec:
         service:
           annotations:
             prometheus.io/port: "10254"
-            prometheus.io/scrape: true
+            prometheus.io/scrape: "true"
   valuesFrom:
   - kind: ConfigMap
     name: ingress-nginx-configmap
