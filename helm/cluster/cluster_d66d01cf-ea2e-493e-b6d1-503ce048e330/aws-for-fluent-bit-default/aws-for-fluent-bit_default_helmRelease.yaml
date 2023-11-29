@@ -159,6 +159,10 @@ spec:
     targetPath: s3.enabled
   - kind: ConfigMap
     name: aws-for-fluent-bit-configmap
+    valuesKey: s3.bucket
+    targetPath: s3.bucket
+  - kind: ConfigMap
+    name: aws-for-fluent-bit-configmap
     valuesKey: s3.region
     targetPath: s3.region
   - kind: ConfigMap
