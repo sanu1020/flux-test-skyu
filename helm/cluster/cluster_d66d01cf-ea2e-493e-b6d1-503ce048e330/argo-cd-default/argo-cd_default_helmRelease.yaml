@@ -42,14 +42,6 @@ spec:
     targetPath: configs.cm.exec.enabled
   - kind: ConfigMap
     name: argo-cd-configmap
-    valuesKey: dex.metrics.enabled
-    targetPath: dex.metrics.enabled
-  - kind: ConfigMap
-    name: argo-cd-configmap
-    valuesKey: dex.serviceMonitor.enabled
-    targetPath: dex.serviceMonitor.enabled
-  - kind: ConfigMap
-    name: argo-cd-configmap
     valuesKey: redis-ha.enabled
     targetPath: redis-ha.enabled
   - kind: ConfigMap
