@@ -147,10 +147,6 @@ spec:
     targetPath: server.priorityClassName
   - kind: ConfigMap
     name: prometheus-configmap
-    valuesKey: server.ingress.enabled
-    targetPath: server.ingress.enabled
-  - kind: ConfigMap
-    name: prometheus-configmap
     valuesKey: server.persistentVolume.enabled
     targetPath: server.persistentVolume.enabled
   - kind: ConfigMap

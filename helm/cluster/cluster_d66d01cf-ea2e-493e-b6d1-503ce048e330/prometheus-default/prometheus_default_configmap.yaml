@@ -7,7 +7,6 @@ data:
   alertmanager.enabled: "false"
   prometheus-pushgateway.enabled: "false"
   server.global.scrape_interval: 30s
-  server.ingress.enabled: "true"
   server.persistentVolume.enabled: "false"
   server.priorityClassName: infra-high-priority
   server.service.servicePort: "9090"
