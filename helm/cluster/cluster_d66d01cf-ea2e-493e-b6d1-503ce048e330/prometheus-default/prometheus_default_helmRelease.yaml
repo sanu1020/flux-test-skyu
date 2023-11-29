@@ -135,22 +135,6 @@ spec:
     targetPath: serviceAccounts.server.name
   - kind: ConfigMap
     name: prometheus-configmap
-    valuesKey: server.remoteWrite.signv4.region
-    targetPath: server.remoteWrite.signv4.region
-  - kind: ConfigMap
-    name: prometheus-configmap
-    valuesKey: server.remoteWrite.queue_config.max_samples_per_send
-    targetPath: server.remoteWrite.queue_config.max_samples_per_send
-  - kind: ConfigMap
-    name: prometheus-configmap
-    valuesKey: server.remoteWrite.queue_config.max_shards
-    targetPath: server.remoteWrite.queue_config.max_shards
-  - kind: ConfigMap
-    name: prometheus-configmap
-    valuesKey: server.remoteWrite.queue_config.capacity
-    targetPath: server.remoteWrite.queue_config.capacity
-  - kind: ConfigMap
-    name: prometheus-configmap
     valuesKey: prometheus-pushgateway.enabled
     targetPath: prometheus-pushgateway.enabled
   - kind: ConfigMap
