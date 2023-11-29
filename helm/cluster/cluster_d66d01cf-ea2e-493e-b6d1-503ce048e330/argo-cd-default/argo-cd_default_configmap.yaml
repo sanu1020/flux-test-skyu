@@ -11,8 +11,8 @@ data:
   configs.cm.timeout.reconciliation: 45s
   controller.metrics.enabled: "true"
   controller.serviceMonitor.enabled: "true"
-  dex.metrics.enabled: "true"
-  dex.serviceMonitor.enabled: "true"
+  dex.metrics.enabled: "false"
+  dex.serviceMonitor.enabled: "false"
   global.revisionHistoryLimit: "3"
   redis-ha.enabled: "true"
   repoServer.metrics.enabled: "true"

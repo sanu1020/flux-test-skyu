@@ -14,12 +14,7 @@ spec:
         name: argo
   interval: 5m0s
   releaseName: argo-cd
-  values:
-    server:
-      ingress:
-        annotations:
-          cert-manager.io/issuer: letsencrypt-production
-          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  values: {}
   valuesFrom:
   - kind: ConfigMap
     name: argo-cd-configmap
@@ -73,10 +68,6 @@ spec:
     name: argo-cd-configmap
     valuesKey: server.autoscaling.maxReplicas
     targetPath: server.autoscaling.maxReplicas
-  - kind: ConfigMap
-    name: argo-cd-configmap
-    valuesKey: server.autoscaling.targetCPUUtilizationPercentage
-    targetPath: server.autoscaling.targetCPUUtilizationPercentage
   - kind: ConfigMap
     name: argo-cd-configmap
     valuesKey: server.autoscaling.targetCPUUtilizationPercentage
