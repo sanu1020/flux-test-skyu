@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-configmap
+  namespace: default
+data:
+  alertmanager.enabled: "false"
+  prometheus-pushgateway.enabled: "false"
+  server.global.scrape_interval: 30s
+  server.ingress.enabled: "true"
+  server.persistentVolume.enabled: "false"
+  server.priorityClassName: infra-high-priority
+  server.remoteWrite.queue_config.capacity: "2500"
+  server.remoteWrite.queue_config.max_samples_per_send: "1000"
+  server.remoteWrite.queue_config.max_shards: "200"
+  server.remoteWrite.signv4.region: us-east-1
+  server.service.servicePort: "9090"
+  server.statefulSet.enabled: "false"
+  serviceAccounts.server.name: amp-iamproxy-ingest-service-account
