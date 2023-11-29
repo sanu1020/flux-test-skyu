@@ -1,0 +1,111 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: argo-cd
+  namespace: default
+spec:
+  chart:
+    spec:
+      chart: argo-cd
+      reconcileStrategy: ChartVersion
+      version: 5.51.0
+      sourceRef:
+        kind: HelmRepository
+        name: argo
+  interval: 5m0s
+  releaseName: argo-cd
+  values:
+    server:
+      ingress:
+        annotations:
+          cert-manager.io/issuer: letsencrypt-production
+          nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+  valuesFrom:
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: applicationSet.replicas
+    targetPath: applicationSet.replicas
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: global.revisionHistoryLimit
+    targetPath: global.revisionHistoryLimit
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: controller.metrics.enabled
+    targetPath: controller.metrics.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: controller.serviceMonitor.enabled
+    targetPath: controller.serviceMonitor.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: configs.cm.timeout.reconciliation
+    targetPath: configs.cm.timeout.reconciliation
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: configs.cm.exec.enabled
+    targetPath: configs.cm.exec.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: dex.metrics.enabled
+    targetPath: dex.metrics.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: dex.serviceMonitor.enabled
+    targetPath: dex.serviceMonitor.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: redis-ha.enabled
+    targetPath: redis-ha.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.replicas
+    targetPath: server.replicas
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.autoscaling.enabled
+    targetPath: server.autoscaling.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.autoscaling.minReplicas
+    targetPath: server.autoscaling.minReplicas
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.autoscaling.maxReplicas
+    targetPath: server.autoscaling.maxReplicas
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.autoscaling.targetCPUUtilizationPercentage
+    targetPath: server.autoscaling.targetCPUUtilizationPercentage
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.autoscaling.targetCPUUtilizationPercentage
+    targetPath: server.autoscaling.targetCPUUtilizationPercentage
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.metrics.enabled
+    targetPath: server.metrics.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.serviceMonitor.enabled
+    targetPath: server.serviceMonitor.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: server.ingress.enabled
+    targetPath: server.ingress.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: repoServer.metrics.enabled
+    targetPath: repoServer.metrics.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: repoServer.serviceMonitor.enabled
+    targetPath: repoServer.serviceMonitor.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: applicationSet.metrics.enabled
+    targetPath: applicationSet.metrics.enabled
+  - kind: ConfigMap
+    name: argo-cd-configmap
+    valuesKey: applicationSet.serviceMonitor.enabled
+    targetPath: applicationSet.serviceMonitor.enabled

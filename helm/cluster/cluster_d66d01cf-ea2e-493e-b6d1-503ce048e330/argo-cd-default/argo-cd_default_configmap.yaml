@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argo-cd-configmap
+  namespace: default
+data:
+  applicationSet.metrics.enabled: "true"
+  applicationSet.replicas: "1"
+  applicationSet.serviceMonitor.enabled: "true"
+  configs.cm.exec.enabled: "true"
+  configs.cm.timeout.reconciliation: 45s
+  controller.metrics.enabled: "true"
+  controller.serviceMonitor.enabled: "true"
+  dex.metrics.enabled: "true"
+  dex.serviceMonitor.enabled: "true"
+  global.revisionHistoryLimit: "3"
+  redis-ha.enabled: "true"
+  repoServer.metrics.enabled: "true"
+  repoServer.serviceMonitor.enabled: "true"
+  server.autoscaling.enabled: "true"
+  server.autoscaling.maxReplicas: "5"
+  server.autoscaling.minReplicas: "1"
+  server.autoscaling.targetCPUUtilizationPercentage: "75"
+  server.ingress.enabled: "true"
+  server.metrics.enabled: "true"
+  server.replicas: "1"
+  server.serviceMonitor.enabled: "true"
