@@ -20,3 +20,7 @@ spec:
     name: podinfo-configmap
     valuesKey: replicaCount
     targetPath: replicaCount
+  - kind: ConfigMap
+    name: podinfo-configmap
+    valuesKey: service.type
+    targetPath: service.type
