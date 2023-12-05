@@ -8,10 +8,10 @@ spec:
     spec:
       chart: podinfo
       reconcileStrategy: ChartVersion
+      version: 6.4.1
       sourceRef:
         kind: HelmRepository
         name: podinfo
-      version: 6.5.2
   interval: 5m0s
   releaseName: podinfo
   values:
@@ -87,7 +87,7 @@ spec:
       enabled: false
       repository: redis
       tag: 7.0.7
-    replicaCount: 2
+    replicaCount: 1
     resources:
       limits: null
       requests:
@@ -124,3 +124,4 @@ spec:
       color: '#34577c'
       logo: ""
       message: ""
+  valuesFrom: []
