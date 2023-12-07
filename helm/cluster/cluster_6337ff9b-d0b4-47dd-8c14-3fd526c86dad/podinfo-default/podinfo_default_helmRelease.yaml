@@ -1,19 +1,27 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiversion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: podinfo
   namespace: default
+  labels:
+    environment: Development
+    app: podinfo
 spec:
   chart:
+    objectmeta:
+      labels:
+        App: podinfo
+        Environment: Development
+        Project: SkyU
     spec:
       chart: podinfo
-      reconcileStrategy: ChartVersion
-      sourceRef:
+      reconcilestrategy: ChartVersion
+      version: 6.5.3
+      sourceref:
         kind: HelmRepository
         name: podinfo
-      version: 6.5.3
   interval: 5m0s
-  releaseName: podinfo
+  releasename: podinfo
   values:
     affinity: {}
     backend: null
@@ -87,7 +95,7 @@ spec:
       enabled: false
       repository: redis
       tag: 7.0.7
-    replicaCount: 2
+    replicaCount: 1
     resources:
       limits: null
       requests:
@@ -124,4 +132,15 @@ spec:
       color: '#34577c'
       logo: ""
       message: ""
-  valuesFrom: []
+  valuesfrom: []
+  postrenderers:
+  - kustomize:
+      patchesjson6902:
+      - target:
+          version: v1
+          kind: Pod
+          name: podinfo-695fc97b8c-m8nf6
+        patch:
+        - op: add
+          path: /metadata/labels/environment
+          value: development
