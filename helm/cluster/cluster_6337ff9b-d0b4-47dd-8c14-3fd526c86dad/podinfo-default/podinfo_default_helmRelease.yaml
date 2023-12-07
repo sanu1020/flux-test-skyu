@@ -139,6 +139,7 @@ spec:
       - kind: Pod
         apiVersion: v1
         metadata:
+          name: podinfo
           labels:
             environment: development
             name: podinfo
