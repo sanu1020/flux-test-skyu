@@ -5,9 +5,9 @@ metadata:
   namespace: nginx
   labels:
     app: nginx
-    environment: development
+    environment: production
     owner: sanujan
-    project: advanto
+    project: skyu
 spec:
   chart:
     spec:
@@ -31,21 +31,21 @@ spec:
           labels:
             labels:
               app: nginx
-              environment: development
+              environment: production
               owner: sanujan
-              project: advanto
+              project: skyu
         spec:
           selector:
             matchLabels:
               labels:
                 app: nginx
-                environment: development
+                environment: production
                 owner: sanujan
-                project: advanto
+                project: skyu
           template:
             metadata:
               labels:
                 app: nginx
-                environment: development
+                environment: production
                 owner: sanujan
-                project: advanto
+                project: skyu
