@@ -4,7 +4,7 @@ metadata:
   name: argo-cd
   namespace: argo
   labels:
-    app: argo-cd
+    app: argocd
     environment: development
     owner: sanujan
     project: advanto
@@ -12,7 +12,7 @@ spec:
   chart:
     metadata: null
     spec:
-      chart: argo-cd
+      chart: argocd
       reconcileStrategy: ChartVersion
       version: 5.51.6
       sourceRef:
@@ -1109,16 +1109,16 @@ spec:
         metadata:
           name: argo-cd
           labels:
-            app: argo-cd
+            app: argocd
             environment: ""
         spec:
           selector:
             matchLabels:
-              app: argo-cd
+              app: argocd
           template:
             metadata:
               labels:
-                app: argo-cd
+                app: argocd
                 environment: development
                 owner: sanujan
                 project: advanto
