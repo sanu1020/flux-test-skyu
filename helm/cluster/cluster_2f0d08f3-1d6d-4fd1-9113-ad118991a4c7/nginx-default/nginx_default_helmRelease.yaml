@@ -26,11 +26,7 @@ spec:
         metadata:
           name: nginx
           labels:
-            labels:
-              app: nginx
-              environment: production
-              owner: sanujan
-              project: skyu
+            labels: {}
         spec:
           selector:
             matchLabels:
