@@ -139,7 +139,5 @@ spec:
       - target:
           kind: Pod
           name: podinfo
-        patch:
-          op: add
-          path: metadata/labels/environment
-          value: development
+        patch: "|\n\t\t\t\t\t\t\t\t- op: add\n\t\t\t\t\t\t\t\t  path: /metadata/labels/environment\n\t\t\t\t\t\t\t\t
+          \ value: development"
