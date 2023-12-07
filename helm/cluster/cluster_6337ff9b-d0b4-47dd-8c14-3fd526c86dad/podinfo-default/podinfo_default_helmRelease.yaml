@@ -135,9 +135,20 @@ spec:
   valuesfrom: []
   postrenderers:
   - kustomize:
-      patches:
-      - target:
-          kind: Pod
+      patchesstrategicmerge:
+      - kind: Pod
+        apiversion: v1
+        metadata:
           name: podinfo
-        patch: "|\n\t\t\t\t\t\t\t\t- op: add\n\t\t\t\t\t\t\t\t  path: /metadata/labels/environment\n\t\t\t\t\t\t\t\t
-          \ value: development"
+          labels:
+            app: podinfo
+            environment: development
+        spec:
+          selector:
+            matchlabels:
+              app: podinfo
+          template:
+            metadata:
+              labels:
+                app: podinfo
+                environment: development
