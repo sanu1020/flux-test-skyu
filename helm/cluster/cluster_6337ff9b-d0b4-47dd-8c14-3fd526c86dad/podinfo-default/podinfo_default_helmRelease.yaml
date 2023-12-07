@@ -136,8 +136,8 @@ spec:
   postrenderers:
   - kustomize:
       patchesstrategicmerge:
-      - kind: Pod
-        apiversion: v1
+      - kind: Deployment
+        apiversion: apps/v1
         metadata:
           name: podinfo
           labels:
