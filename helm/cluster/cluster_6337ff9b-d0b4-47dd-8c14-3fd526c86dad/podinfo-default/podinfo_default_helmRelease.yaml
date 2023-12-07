@@ -1,4 +1,4 @@
-apiversion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: podinfo
@@ -9,16 +9,16 @@ metadata:
     app: podinfo
 spec:
   chart:
-    objectmeta: null
+    metadata: null
     spec:
       chart: podinfo
-      reconcilestrategy: ChartVersion
+      reconcileStrategy: ChartVersion
       version: 6.5.3
-      sourceref:
+      sourceRef:
         kind: HelmRepository
         name: podinfo
   interval: 5m0s
-  releasename: podinfo
+  releaseName: podinfo
   values:
     affinity: {}
     backend: null
@@ -129,12 +129,12 @@ spec:
       color: '#34577c'
       logo: ""
       message: ""
-  valuesfrom: []
-  postrenderers:
+  valuesFrom: []
+  postRenderers:
   - kustomize:
-      patchesstrategicmerge:
+      patchesStrategicMerge:
       - kind: Deployment
-        apiversion: apps/v1
+        apiVersion: apps/v1
         metadata:
           name: podinfo
           labels:
@@ -142,7 +142,7 @@ spec:
             environment: ""
         spec:
           selector:
-            matchlabels:
+            matchLabels:
               app: podinfo
           template:
             metadata:
