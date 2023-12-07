@@ -140,6 +140,6 @@ spec:
           kind: Pod
           name: podinfo
         patch:
-        - op: add
+          op: add
           path: metadata/labels/environment
           value: development
