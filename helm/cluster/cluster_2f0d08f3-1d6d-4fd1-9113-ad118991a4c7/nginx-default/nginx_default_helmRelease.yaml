@@ -37,11 +37,7 @@ spec:
         spec:
           selector:
             matchLabels:
-              labels:
-                app: nginx
-                environment: production
-                owner: sanujan
-                project: skyu
+              app: nginx
           template:
             metadata:
               labels:
