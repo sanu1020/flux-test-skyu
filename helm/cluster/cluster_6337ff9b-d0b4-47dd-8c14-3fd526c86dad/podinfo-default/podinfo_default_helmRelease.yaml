@@ -4,9 +4,9 @@ metadata:
   name: podinfo
   namespace: default
   labels:
-    App: podinfo
     Environment: Production
     Project: SkyU
+    app: podinfo
 spec:
   chart:
     objectmeta: null
@@ -147,6 +147,6 @@ spec:
           template:
             metadata:
               labels:
-                App: podinfo
                 Environment: Production
                 Project: SkyU
+                app: podinfo
