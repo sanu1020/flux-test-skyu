@@ -136,7 +136,7 @@ spec:
   postrenderers:
   - kustomize:
       patches:
-      - target:
+        target:
           kind: Pod
           name: podinfo
         patch:
