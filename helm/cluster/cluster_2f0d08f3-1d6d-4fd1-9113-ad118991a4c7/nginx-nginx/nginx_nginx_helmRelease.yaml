@@ -20,7 +20,7 @@ spec:
   interval: 5m0s
   releaseName: nginx
   uninstall:
-    keephistory: false
+    keepHistory: false
   postRenderers:
   - kustomize:
       patchesStrategicMerge:
