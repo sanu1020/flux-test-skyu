@@ -40,3 +40,57 @@ spec:
         - op: add
           path: /spec/template/metadata/labels/owner
           value: sanujan
+      - target:
+          version: v1
+          kind: Deployment
+          name: prometheus-server
+          namespace: default
+        patch:
+        - op: add
+          path: /spec/template/metadata/labels/app
+          value: prometheus
+        - op: add
+          path: /spec/template/metadata/labels/environment
+          value: pro
+        - op: add
+          path: /spec/template/metadata/labels/project
+          value: advanto
+        - op: add
+          path: /spec/template/metadata/labels/owner
+          value: sanujan
+      - target:
+          version: v1
+          kind: Deployment
+          name: prometheus-prometheus-pushgateway
+          namespace: default
+        patch:
+        - op: add
+          path: /spec/template/metadata/labels/app
+          value: prometheus
+        - op: add
+          path: /spec/template/metadata/labels/environment
+          value: pro
+        - op: add
+          path: /spec/template/metadata/labels/project
+          value: advanto
+        - op: add
+          path: /spec/template/metadata/labels/owner
+          value: sanujan
+      - target:
+          version: v1
+          kind: Deployment
+          name: prometheus-kube-state-metrics
+          namespace: default
+        patch:
+        - op: add
+          path: /spec/template/metadata/labels/app
+          value: prometheus
+        - op: add
+          path: /spec/template/metadata/labels/environment
+          value: pro
+        - op: add
+          path: /spec/template/metadata/labels/project
+          value: advanto
+        - op: add
+          path: /spec/template/metadata/labels/owner
+          value: sanujan
