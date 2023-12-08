@@ -3,11 +3,7 @@ kind: HelmRelease
 metadata:
   name: nginx
   namespace: default
-  labels:
-    app: nginx
-    environment: production
-    owner: sanujan
-    project: skyu
+  labels: {}
 spec:
   chart:
     spec:
@@ -23,28 +19,19 @@ spec:
     keepHistory: false
   postRenderers:
   - kustomize:
-      patchesStrategicMerge:
-      - kind: Deployment
-        apiVersion: apps/v1
-        metadata:
+      patchesJson6902:
+      - target:
+          version: v1
+          kind: Deployment
           name: nginx
           namespace: default
-          labels:
-            app: nginx
-            environment: production
-            owner: sanujan
-            project: skyu
-        spec:
-          selector:
-            matchLabels:
-              app: nginx
-              environment: production
-              owner: sanujan
-              project: skyu
-          template:
-            metadata:
-              labels:
-                app: nginx
-                environment: production
-                owner: sanujan
-                project: skyu
+        patch:
+        - op: add
+          path: /spec/template/metadata/labels/environment
+          value: pro
+        - op: add
+          path: /spec/template/metadata/labels/project
+          value: advanto
+        - op: add
+          path: /spec/template/metadata/labels/owner
+          value: sanujan
