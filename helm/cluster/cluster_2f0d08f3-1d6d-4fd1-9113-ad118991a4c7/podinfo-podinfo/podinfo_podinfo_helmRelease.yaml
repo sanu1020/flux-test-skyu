@@ -17,8 +17,6 @@ spec:
   releaseName: podinfo
   uninstall:
     keepHistory: false
-  values: {}
-  valuesFrom: []
   postRenderers:
   - kustomize:
       patchesJson6902:
@@ -26,60 +24,6 @@ spec:
           version: v1
           kind: Deployment
           name: podinfo
-          namespace: podinfo
-        patch:
-        - op: add
-          path: /spec/template/metadata/labels/app
-          value: podinfo
-        - op: add
-          path: /spec/template/metadata/labels/environment
-          value: development
-        - op: add
-          path: /spec/template/metadata/labels/project
-          value: advanto
-        - op: add
-          path: /spec/template/metadata/labels/owner
-          value: sanujan
-      - target:
-          version: v1
-          kind: Deployment
-          name: prometheus-server
-          namespace: podinfo
-        patch:
-        - op: add
-          path: /spec/template/metadata/labels/app
-          value: podinfo
-        - op: add
-          path: /spec/template/metadata/labels/environment
-          value: development
-        - op: add
-          path: /spec/template/metadata/labels/project
-          value: advanto
-        - op: add
-          path: /spec/template/metadata/labels/owner
-          value: sanujan
-      - target:
-          version: v1
-          kind: Deployment
-          name: prometheus-prometheus-pushgateway
-          namespace: podinfo
-        patch:
-        - op: add
-          path: /spec/template/metadata/labels/app
-          value: podinfo
-        - op: add
-          path: /spec/template/metadata/labels/environment
-          value: development
-        - op: add
-          path: /spec/template/metadata/labels/project
-          value: advanto
-        - op: add
-          path: /spec/template/metadata/labels/owner
-          value: sanujan
-      - target:
-          version: v1
-          kind: Deployment
-          name: prometheus-kube-state-metrics
           namespace: podinfo
         patch:
         - op: add
