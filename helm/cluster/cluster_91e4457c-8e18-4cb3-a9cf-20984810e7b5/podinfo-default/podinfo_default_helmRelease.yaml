@@ -94,3 +94,12 @@ spec:
         - op: add
           path: /spec/template/metadata/labels/app
           value: podinfo
+        - op: add
+          path: /spec/template/metadata/labels/environment
+          value: development
+        - op: add
+          path: /spec/template/metadata/labels/project
+          value: advanto
+        - op: add
+          path: /spec/template/metadata/labels/owner
+          value: sanujan
