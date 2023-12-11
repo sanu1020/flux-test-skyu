@@ -149,4 +149,4 @@ spec:
           value: cluster_91e4457c-8e18-4cb3-a9cf-20984810e7b5
         - op: add
           path: /spec/template/metadata/labels/release-id
-          value: 0
+          value: 10
