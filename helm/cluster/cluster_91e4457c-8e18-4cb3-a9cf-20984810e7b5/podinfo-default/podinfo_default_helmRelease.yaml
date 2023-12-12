@@ -129,12 +129,12 @@ spec:
   valuesFrom:
   - kind: Secret
     name: podinfo
-    valuesKey: ""
-    targetPath: ""
+    valuesKey: replicaCount
+    targetPath: replicaCount
   - kind: Secret
     name: podinfo
-    valuesKey: ""
-    targetPath: ""
+    valuesKey: service.enabled
+    targetPath: service.enabled
   postRenderers:
   - kustomize:
       patchesJson6902:
