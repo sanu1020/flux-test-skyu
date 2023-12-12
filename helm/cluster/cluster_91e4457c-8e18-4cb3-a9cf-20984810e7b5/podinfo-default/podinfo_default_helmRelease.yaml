@@ -8,11 +8,35 @@ spec:
     spec:
       chart: podinfo
       reconcileStrategy: ChartVersion
-      version: 6.1.5
       sourceRef:
         kind: HelmRepository
         name: podinfo
+      version: 6.1.5
   interval: 5m0s
+  postRenderers:
+  - kustomize:
+      patchesJson6902:
+      - patch:
+        - op: add
+          path: /spec/template/metadata/labels/app
+          value: podinfo
+        - op: add
+          path: /spec/template/metadata/labels/organization-id
+          value: org_ba1b5bee-af4f-45d1-a664-6c3de84ae72c
+        - op: add
+          path: /spec/template/metadata/labels/project-id
+          value: project_7d6a36ec-4ee2-4dab-8ed4-21cdbac946f2
+        - op: add
+          path: /spec/template/metadata/labels/cluster-id
+          value: cluster_91e4457c-8e18-4cb3-a9cf-20984810e7b5
+        - op: add
+          path: /spec/template/metadata/labels/release-id
+          value: "19"
+        target:
+          kind: Deployment
+          name: podinfo
+          namespace: default
+          version: v1
   releaseName: podinfo
   uninstall:
     keepHistory: false
@@ -89,7 +113,7 @@ spec:
       enabled: false
       repository: redis
       tag: 7.0.7
-    replicaCount: 1
+    replicaCount: 2
     resources:
       limits: null
       requests:
@@ -129,33 +153,9 @@ spec:
   valuesFrom:
   - kind: Secret
     name: podinfo
-    valuesKey: replicaCount
     targetPath: replicaCount
+    valuesKey: replicaCount
   - kind: Secret
     name: podinfo
-    valuesKey: service.enabled
     targetPath: service.enabled
-  postRenderers:
-  - kustomize:
-      patchesJson6902:
-      - target:
-          version: v1
-          kind: Deployment
-          name: podinfo
-          namespace: default
-        patch:
-        - op: add
-          path: /spec/template/metadata/labels/app
-          value: podinfo
-        - op: add
-          path: /spec/template/metadata/labels/organization-id
-          value: org_ba1b5bee-af4f-45d1-a664-6c3de84ae72c
-        - op: add
-          path: /spec/template/metadata/labels/project-id
-          value: project_7d6a36ec-4ee2-4dab-8ed4-21cdbac946f2
-        - op: add
-          path: /spec/template/metadata/labels/cluster-id
-          value: cluster_91e4457c-8e18-4cb3-a9cf-20984810e7b5
-        - op: add
-          path: /spec/template/metadata/labels/release-id
-          value: "19"
+    valuesKey: service.enabled
