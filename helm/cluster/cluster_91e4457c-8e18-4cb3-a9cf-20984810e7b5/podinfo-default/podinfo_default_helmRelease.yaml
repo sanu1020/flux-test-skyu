@@ -136,4 +136,26 @@ spec:
     valuesKey: service.enabled
     targetPath: service.enabled
   postRenderers:
-  - {}
+  - kustomize:
+      patchesJson6902:
+      - target:
+          version: v1
+          kind: Deployment
+          name: podinfo
+          namespace: default
+        patch:
+        - op: add
+          path: /spec/template/metadata/labels/app
+          value: podinfo
+        - op: add
+          path: /spec/template/metadata/labels/organization-id
+          value: org_ba1b5bee-af4f-45d1-a664-6c3de84ae72c
+        - op: add
+          path: /spec/template/metadata/labels/project-id
+          value: project_7d6a36ec-4ee2-4dab-8ed4-21cdbac946f2
+        - op: add
+          path: /spec/template/metadata/labels/cluster-id
+          value: cluster_91e4457c-8e18-4cb3-a9cf-20984810e7b5
+        - op: add
+          path: /spec/template/metadata/labels/release-id
+          value: "12"
