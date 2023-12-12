@@ -126,6 +126,15 @@ spec:
       color: '#34577c'
       logo: ""
       message: ""
+  valuesFrom:
+  - kind: Secret
+    name: podinfo
+    valuesKey: ""
+    targetPath: ""
+  - kind: Secret
+    name: podinfo
+    valuesKey: ""
+    targetPath: ""
   postRenderers:
   - kustomize:
       patchesJson6902:
